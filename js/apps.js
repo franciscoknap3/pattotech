@@ -259,7 +259,12 @@ function enviarCompra(e){
         emailjs.sendForm(serviceID, templateID, this)
         .then(() => {
             btn.value = 'Finalizar compra';
-            alert('Pedido Confirmado!');
+            Swal.fire({
+                title: "¡Pedido confirmado!",
+                text: "Gracias por tu compra",
+                icon: "success",
+                confirmButtonText: "Seguir Comprando",
+                })
         }, (err) => {
             btn.value = 'Finalizar compra';
             alert(JSON.stringify(err));
